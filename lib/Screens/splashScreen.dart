@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/Screens/Providers/SplashProvider.dart';
+import 'package:my_app/Providers/SplashProvider.dart';
 import 'package:provider/provider.dart';
 
 class Splashscreen extends StatefulWidget {
