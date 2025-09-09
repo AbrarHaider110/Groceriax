@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/Screens/onboardingScreen.dart';
+import 'package:my_app/Screens/Providers/SplashProvider.dart';
+import 'package:provider/provider.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
@@ -10,48 +11,25 @@ class Splashscreen extends StatefulWidget {
 
 class _SplashscreenState extends State<Splashscreen>
     with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 2),
-    );
-
-    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInOut);
-
-    _controller.forward();
-
-    Future.delayed(const Duration(seconds: 5), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => Onboardingscreen()),
-      );
-    });
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.green,
-      body: Center(
-        child: ScaleTransition(
-          scale: _animation,
-          child: FadeTransition(
-            opacity: _animation,
-            child: Image.asset("assets/SplashScreen.png"),
-          ),
-        ),
+    return ChangeNotifierProvider(
+      create: (_) => SplashProvider(vsync: this, context: context),
+      child: Consumer<SplashProvider>(
+        builder: (context, provider, child) {
+          return Scaffold(
+            backgroundColor: Colors.green,
+            body: Center(
+              child: ScaleTransition(
+                scale: provider.animation,
+                child: FadeTransition(
+                  opacity: provider.animation,
+                  child: Image.asset("assets/SplashScreen.png"),
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
