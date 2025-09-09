@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/Screens/FirstScreen.dart';
+import 'package:my_app/Screens/onboardingScreen.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
@@ -29,7 +29,7 @@ class _SplashscreenState extends State<Splashscreen>
     Future.delayed(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Firstscreen()),
+        MaterialPageRoute(builder: (context) => Onboardingscreen()),
       );
     });
   }
@@ -43,7 +43,7 @@ class _SplashscreenState extends State<Splashscreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF007B37),
+      backgroundColor: Colors.green,
       body: Center(
         child: ScaleTransition(
           scale: _animation,
