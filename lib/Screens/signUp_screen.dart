@@ -144,7 +144,13 @@ class _SignupScreenState extends State<SignupScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text("Already have a Account?"),
-                  TextButton(onPressed: () {}, child: const Text("Sign In")),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "Sign In",
+                      style: TextStyle(color: Colors.green),
+                    ),
+                  ),
                 ],
               ),
             ],
