@@ -64,6 +64,7 @@ flutter:
     - assets/main_img.png
     - assets/onboarding.png
     - assets/signIn.png
+    - assets/groceriax_logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
