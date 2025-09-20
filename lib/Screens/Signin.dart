@@ -77,12 +77,25 @@ class _SigninState extends State<Signin> {
                   style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 5),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  "Forgetten Password",
+                  style: TextStyle(color: Colors.green),
+                ),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text("Don't have an account?"),
-                  TextButton(onPressed: () {}, child: const Text("Sign Up")),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "Sign Up",
+                      style: TextStyle(color: Colors.green),
+                    ),
+                  ),
                 ],
               ),
             ],
